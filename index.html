@@ -15,7 +15,7 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.7;
-            color: #1e1e1e; /* preto suave para todo o texto */
+            color: #1e1e1e;
             background: #ffffff;
             padding: 24px 16px;
             min-height: 100vh;
@@ -30,6 +30,24 @@
             background: #ffffff;
             padding: 40px 44px;
             border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- Logo no topo (100x100 quadrado) --- */
+        .logo-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .logo-container img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            display: block;
         }
 
         /* --- Tipografia (todos os títulos e textos em preto, exceto os específicos) --- */
@@ -41,6 +59,8 @@
             padding-bottom: 12px;
             margin-bottom: 24px;
             color: #1e1e1e;
+            width: 100%;
+            text-align: center;
         }
 
         h2 {
@@ -83,21 +103,22 @@
 
         /* --- Título da disciplina: verde UnB + 25% maior --- */
         .course-title {
-            font-size: 1.5rem;      /* 1.2rem * 1.25 = 1.5rem */
+            font-size: 1.5rem;
             font-weight: 600;
             color: #006633;         /* verde UnB */
+            text-align: center;
         }
 
         /* --- LINKS: azul tradicional de hiperlink (#0066cc) --- */
         a {
-            color: #0066cc;         /* azul tradicional de hiperlink */
+            color: #0066cc;
             text-decoration: underline;
             word-break: break-word;
             transition: color 0.15s;
         }
 
         a:hover {
-            color: #003366;         /* escurece para o azul UnB ao passar o mouse */
+            color: #003366;
             text-decoration: underline;
         }
 
@@ -126,7 +147,8 @@
             padding: 14px 18px;
             background: #f7f9fc;
             border-radius: 10px;
-            border-left: 4px solid #003366; /* borda decorativa em azul UnB */
+            border-left: 4px solid #003366;
+            width: 100%;
         }
 
         .detail-row {
@@ -157,6 +179,26 @@
             padding: 2px 12px;
             border-radius: 20px;
             letter-spacing: 0.01em;
+        }
+
+        /* --- Rodapé atualizado --- */
+        .footer {
+            margin-top: 28px;
+            font-size: 0.85rem;
+            color: #1e1e1e;          /* preto */
+            border-top: 1px solid #eef2f6;
+            padding-top: 18px;
+            text-align: center;
+            width: 100%;
+            line-height: 1.6;
+        }
+
+        .footer a {
+            color: #0066cc;
+        }
+
+        .footer a:hover {
+            color: #003366;
         }
 
         /* --- Responsivo --- */
@@ -191,6 +233,11 @@
             .course-title {
                 font-size: 1.25rem;
             }
+
+            .logo-container img {
+                width: 80px;
+                height: 80px;
+            }
         }
 
         @media (max-width: 400px) {
@@ -209,19 +256,33 @@
             .course-title {
                 font-size: 1.1rem;
             }
+
+            .logo-container img {
+                width: 60px;
+                height: 60px;
+            }
         }
     </style>
 </head>
-
 <body>
 
     <div class="container">
+
+        <!-- LOGO NO TOPO (100x100 px - quadrado) -->
+        <div class="logo-container">
+            <img
+                src="https://raw.githubusercontent.com/chaffim/CSIV/main/CSIV-logo_new.png"
+                alt="CSIV Logo"
+                width="100"
+                height="100"
+            />
+        </div>
 
         <!-- TÍTULO PRINCIPAL (preto) -->
         <h1>CSIV — Codificação e Compressão de Sinais, Imagens e Vídeo</h1>
 
         <!-- INSTITUIÇÃO (preto) -->
-        <p class="subhead">
+        <p class="subhead" style="text-align: center;">
             <strong>Disciplina de Graduação em Engenharia Eletrônica</strong><br />
             Universidade de Brasília – UnB
         </p>
@@ -231,22 +292,22 @@
             FGA0095 – CODIFICAÇÃO E COMPRESSÃO DE SINAIS, IMAGENS E VÍDEO
         </p>
 
-        <!-- PROFESSOR -->
-        <p style="margin-top:6px;">
+        <!-- PROFESSOR com link atualizado -->
+        <p style="margin-top:6px; text-align: center;">
             <span class="highlight">Prof. Marcus Chaffim</span><br />
-            <span style="font-size:0.98rem;">web:&nbsp;</span>
-            <a href="https://pesquisar.unb.br/professor/marcus-vinicius-chaffim-costa" target="_blank" rel="noopener">
-                https://pesquisar.unb.br/professor/marcus-vinicius-chaffim-costa
+            <span style="font-size:0.98rem;">Corpo docente:&nbsp;</span>
+            <a href="https://eletronica.unb.br/corpo-docente/" target="_blank" rel="noopener">
+                https://eletronica.unb.br/corpo-docente/
             </a>
         </p>
 
         <!-- PLANO DE ENSINO -->
-        <h2>📘 Plano de Ensino 2025-02</h2>
-        <p style="font-size:1rem; color:#3a4a5a; margin-top:-4px;">
+        <h2 style="text-align: center;">📘 Plano de Ensino 2025-02</h2>
+        <p style="font-size:1rem; color:#3a4a5a; margin-top:-4px; text-align: center;">
             Curso ministrado em modalidade presencial
         </p>
 
-        <ul class="link-list">
+        <ul class="link-list" style="text-align: center;">
             <li>
                 <a href="https://github.com/chaffim/CSIV/blob/main/CSIV_2025-02_-_Prof_Chaffim.pdf" target="_blank" rel="noopener">
                     📄 Acesse o PDF do plano de ensino
@@ -287,10 +348,10 @@
 
         </div>
 
-        <!-- RODAPÉ (preto) -->
-        <p style="margin-top:28px; font-size:0.85rem; color:#6a7a8a; border-top:1px solid #eef2f6; padding-top:18px; text-align:center;">
-            | CSIV | Engenharia Eletrônica | Faculdade de Ciências e Tecnologias em Engenharia | Universidade de Brasília |
-        </p>
+        <!-- RODAPÉ ATUALIZADO conforme solicitado -->
+        <div class="footer">
+            CSIV | Engenharia Eletrônica | Faculdade de Ciências e Tecnologias em Engenharia | Universidade de Brasília
+        </div>
 
     </div>
 
