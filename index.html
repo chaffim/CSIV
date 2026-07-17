@@ -50,16 +50,24 @@
             display: block;
         }
 
-        /* --- Tipografia (todos os títulos e textos em preto, exceto os específicos) --- */
-        h1 {
-            font-size: 1.9rem;
+        /* --- Tipografia --- */
+        /* Título principal: azul UnB, mesmo tamanho da linha "Disciplina..." */
+        .main-title {
+            font-size: 1.1rem;
             font-weight: 600;
-            letter-spacing: -0.02em;
+            color: #003366;          /* azul UnB */
+            text-align: center;
             border-bottom: 3px solid #e6edf3;
             padding-bottom: 12px;
             margin-bottom: 24px;
-            color: #1e1e1e;
             width: 100%;
+        }
+
+        /* Subtítulo (instituição) com mesmo tamanho */
+        .subhead {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+            color: #1e1e1e;          /* preto */
             text-align: center;
         }
 
@@ -69,25 +77,12 @@
             margin-top: 28px;
             margin-bottom: 8px;
             color: #1e1e1e;
-        }
-
-        h3 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-top: 20px;
-            margin-bottom: 4px;
-            color: #1e1e1e;
+            text-align: center;
         }
 
         p {
             font-size: 1.05rem;
             margin-bottom: 14px;
-            color: #1e1e1e;
-        }
-
-        .subhead {
-            font-size: 1.05rem;
-            margin-bottom: 6px;
             color: #1e1e1e;
         }
 
@@ -101,7 +96,7 @@
             color: #003366; /* azul UnB */
         }
 
-        /* --- Título da disciplina: verde UnB + 25% maior --- */
+        /* --- Título da disciplina (código + nome) em verde UnB + 25% maior --- */
         .course-title {
             font-size: 1.5rem;
             font-weight: 600;
@@ -126,6 +121,7 @@
             list-style: none;
             padding: 0;
             margin: 8px 0 16px 0;
+            text-align: center;
         }
 
         .link-list li {
@@ -138,35 +134,49 @@
             font-weight: 500;
         }
 
-        /* --- Detalhes em grade --- */
+        /* --- Detalhes em grade: duas colunas alinhadas à esquerda --- */
         .detail-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;  /* coluna 1: rótulos, coluna 2: valores */
+            gap: 6px 16px;
             margin: 12px 0 8px 0;
             padding: 14px 18px;
             background: #f7f9fc;
             border-radius: 10px;
             border-left: 4px solid #003366;
             width: 100%;
+            align-items: baseline;
         }
 
         .detail-row {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            gap: 4px 8px;
+            display: contents;  /* faz com que os filhos ocupem as células da grid */
         }
 
-        /* --- APENAS os rótulos dos detalhes ficam em azul UnB --- */
         .detail-label {
             font-weight: 600;
             color: #003366;         /* azul UnB */
-            min-width: 110px;
+            text-align: left;
+            padding: 2px 0;
         }
 
         .detail-value {
             color: #1e1e1e;         /* preto */
+            text-align: left;
+            padding: 2px 0;
+        }
+
+        /* Para o pré-requisito que ocupa duas colunas, usamos grid-column: 1 / -1 */
+        .detail-full {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 8px;
+            padding: 6px 0 0 0;
+            border-top: 1px dashed #dce3ec;
+            margin-top: 4px;
+        }
+        .detail-full .detail-label {
+            min-width: 110px;
         }
 
         /* --- Badge (código) em preto --- */
@@ -181,11 +191,11 @@
             letter-spacing: 0.01em;
         }
 
-        /* --- Rodapé atualizado --- */
+        /* --- Rodapé --- */
         .footer {
             margin-top: 28px;
             font-size: 0.85rem;
-            color: #1e1e1e;          /* preto */
+            color: #1e1e1e;
             border-top: 1px solid #eef2f6;
             padding-top: 18px;
             text-align: center;
@@ -207,8 +217,11 @@
                 padding: 24px 18px;
             }
 
-            h1 {
-                font-size: 1.5rem;
+            .main-title {
+                font-size: 1rem;
+            }
+            .subhead {
+                font-size: 1rem;
             }
 
             h2 {
@@ -216,17 +229,14 @@
             }
 
             p,
-            .subhead,
             .link-list li,
             .detail-value {
                 font-size: 0.98rem;
             }
 
-            .detail-label {
-                min-width: 90px;
-            }
-
             .detail-grid {
+                grid-template-columns: 1fr 1.5fr;
+                gap: 4px 10px;
                 padding: 12px 14px;
             }
 
@@ -245,12 +255,16 @@
                 padding: 16px 12px;
             }
 
-            h1 {
-                font-size: 1.25rem;
+            .main-title {
+                font-size: 0.95rem;
+            }
+            .subhead {
+                font-size: 0.95rem;
             }
 
-            .detail-label {
-                min-width: 70px;
+            .detail-grid {
+                grid-template-columns: 1fr 1.2fr;
+                padding: 10px 12px;
             }
 
             .course-title {
@@ -268,7 +282,7 @@
 
     <div class="container">
 
-        <!-- LOGO NO TOPO (100x100 px - quadrado) -->
+        <!-- LOGO NO TOPO (100x100) -->
         <div class="logo-container">
             <img
                 src="https://raw.githubusercontent.com/chaffim/CSIV/main/CSIV-logo_new.png"
@@ -278,11 +292,13 @@
             />
         </div>
 
-        <!-- TÍTULO PRINCIPAL (preto) -->
-        <h1>CSIV — Codificação e Compressão de Sinais, Imagens e Vídeo</h1>
+        <!-- TÍTULO PRINCIPAL (azul UnB, mesmo tamanho que subtítulo) -->
+        <div class="main-title">
+            CSIV — Codificação e Compressão de Sinais, Imagens e Vídeo
+        </div>
 
-        <!-- INSTITUIÇÃO (preto) -->
-        <p class="subhead" style="text-align: center;">
+        <!-- INSTITUIÇÃO (mesmo tamanho que título) -->
+        <p class="subhead">
             <strong>Disciplina de Graduação em Engenharia Eletrônica</strong><br />
             Universidade de Brasília – UnB
         </p>
@@ -302,12 +318,12 @@
         </p>
 
         <!-- PLANO DE ENSINO -->
-        <h2 style="text-align: center;">📘 Plano de Ensino 2025-02</h2>
+        <h2>📘 Plano de Ensino 2025-02</h2>
         <p style="font-size:1rem; color:#3a4a5a; margin-top:-4px; text-align: center;">
             Curso ministrado em modalidade presencial
         </p>
 
-        <ul class="link-list" style="text-align: center;">
+        <ul class="link-list">
             <li>
                 <a href="https://github.com/chaffim/CSIV/blob/main/CSIV_2025-02_-_Prof_Chaffim.pdf" target="_blank" rel="noopener">
                     📄 Acesse o PDF do plano de ensino
@@ -315,7 +331,7 @@
             </li>
         </ul>
 
-        <!-- DETALHES EM GRADE -->
+        <!-- DETALHES EM GRADE: DUAS COLUNAS ALINHADAS À ESQUERDA -->
         <div class="detail-grid">
 
             <div class="detail-row">
@@ -338,7 +354,8 @@
                 <span class="detail-value">8 horas (4h de atividades práticas + 4h de estudo)</span>
             </div>
 
-            <div class="detail-row" style="margin-top:4px; border-top:1px dashed #dce3ec; padding-top:10px;">
+            <!-- Pré-requisitos ocupa a linha inteira, com dois itens internos -->
+            <div class="detail-full">
                 <span class="detail-label">Pré‑requisitos</span>
                 <span class="detail-value">
                     <strong>FGA0102</strong> Sinais e Sistemas para Engenharia &amp;
@@ -348,7 +365,7 @@
 
         </div>
 
-        <!-- RODAPÉ ATUALIZADO conforme solicitado -->
+        <!-- RODAPÉ -->
         <div class="footer">
             CSIV | Engenharia Eletrônica | Faculdade de Ciências e Tecnologias em Engenharia | Universidade de Brasília
         </div>
