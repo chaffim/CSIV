@@ -51,11 +51,10 @@
         }
 
         /* --- Tipografia --- */
-        /* Título principal: azul UnB, mesmo tamanho da linha "Disciplina..." */
         .main-title {
             font-size: 1.1rem;
             font-weight: 600;
-            color: #003366;          /* azul UnB */
+            color: #003366;
             text-align: center;
             border-bottom: 3px solid #e6edf3;
             padding-bottom: 12px;
@@ -63,11 +62,10 @@
             width: 100%;
         }
 
-        /* Subtítulo (instituição) com mesmo tamanho */
         .subhead {
             font-size: 1.1rem;
             margin-bottom: 6px;
-            color: #1e1e1e;          /* preto */
+            color: #1e1e1e;
             text-align: center;
         }
 
@@ -91,20 +89,20 @@
             color: #1e1e1e;
         }
 
-        /* --- APENAS os <strong> ficam em azul UnB --- */
         strong {
-            color: #003366; /* azul UnB */
+            color: #003366;
         }
 
-        /* --- Título da disciplina (código + nome) em verde UnB + 25% maior --- */
+        /* --- Título da disciplina: verde UnB, tamanho reduzido (1.3rem) --- */
         .course-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;          /* antes 1.5rem → redução de ~13% */
             font-weight: 600;
-            color: #006633;         /* verde UnB */
+            color: #006633;
             text-align: center;
+            word-break: break-word;     /* permite quebra suave, mas evita isolamento */
         }
 
-        /* --- LINKS: azul tradicional de hiperlink (#0066cc) --- */
+        /* --- LINKS --- */
         a {
             color: #0066cc;
             text-decoration: underline;
@@ -137,7 +135,7 @@
         /* --- Detalhes em grade: duas colunas alinhadas à esquerda --- */
         .detail-grid {
             display: grid;
-            grid-template-columns: 1fr 2fr;  /* coluna 1: rótulos, coluna 2: valores */
+            grid-template-columns: 1fr 2fr;
             gap: 6px 16px;
             margin: 12px 0 8px 0;
             padding: 14px 18px;
@@ -149,23 +147,23 @@
         }
 
         .detail-row {
-            display: contents;  /* faz com que os filhos ocupem as células da grid */
+            display: contents;
         }
 
         .detail-label {
             font-weight: 600;
-            color: #003366;         /* azul UnB */
+            color: #003366;
             text-align: left;
             padding: 2px 0;
         }
 
         .detail-value {
-            color: #1e1e1e;         /* preto */
+            color: #1e1e1e;
             text-align: left;
             padding: 2px 0;
         }
 
-        /* Para o pré-requisito que ocupa duas colunas, usamos grid-column: 1 / -1 */
+        /* Para o pré-requisito que ocupa duas colunas */
         .detail-full {
             grid-column: 1 / -1;
             display: flex;
@@ -178,8 +176,13 @@
         .detail-full .detail-label {
             min-width: 110px;
         }
+        /* Quebra de linha após o & na linha de pré-requisitos */
+        .prereq-break {
+            display: block;
+            margin-top: 2px;
+        }
 
-        /* --- Badge (código) em preto --- */
+        /* --- Badge --- */
         .badge {
             display: inline-block;
             background: #e6edf3;
@@ -206,7 +209,6 @@
         .footer a {
             color: #0066cc;
         }
-
         .footer a:hover {
             color: #003366;
         }
@@ -216,34 +218,28 @@
             .container {
                 padding: 24px 18px;
             }
-
             .main-title {
                 font-size: 1rem;
             }
             .subhead {
                 font-size: 1rem;
             }
-
             h2 {
                 font-size: 1.15rem;
             }
-
             p,
             .link-list li,
             .detail-value {
                 font-size: 0.98rem;
             }
-
             .detail-grid {
                 grid-template-columns: 1fr 1.5fr;
                 gap: 4px 10px;
                 padding: 12px 14px;
             }
-
             .course-title {
-                font-size: 1.25rem;
+                font-size: 1.15rem; /* ainda menor em telas pequenas */
             }
-
             .logo-container img {
                 width: 80px;
                 height: 80px;
@@ -254,23 +250,19 @@
             .container {
                 padding: 16px 12px;
             }
-
             .main-title {
                 font-size: 0.95rem;
             }
             .subhead {
                 font-size: 0.95rem;
             }
-
             .detail-grid {
                 grid-template-columns: 1fr 1.2fr;
                 padding: 10px 12px;
             }
-
             .course-title {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
-
             .logo-container img {
                 width: 60px;
                 height: 60px;
@@ -282,7 +274,7 @@
 
     <div class="container">
 
-        <!-- LOGO NO TOPO (100x100) -->
+        <!-- LOGO -->
         <div class="logo-container">
             <img
                 src="https://raw.githubusercontent.com/chaffim/CSIV/main/CSIV-logo_new.png"
@@ -292,23 +284,23 @@
             />
         </div>
 
-        <!-- TÍTULO PRINCIPAL (azul UnB, mesmo tamanho que subtítulo) -->
+        <!-- TÍTULO PRINCIPAL (azul UnB) -->
         <div class="main-title">
             CSIV — Codificação e Compressão de Sinais, Imagens e Vídeo
         </div>
 
-        <!-- INSTITUIÇÃO (mesmo tamanho que título) -->
+        <!-- SUBTÍTULO INSTITUIÇÃO -->
         <p class="subhead">
             <strong>Disciplina de Graduação em Engenharia Eletrônica</strong><br />
             Universidade de Brasília – UnB
         </p>
 
-        <!-- CÓDIGO + NOME COMPLETO (verde UnB + 25% maior) -->
+        <!-- CÓDIGO + NOME (verde UnB, tamanho reduzido) -->
         <p class="course-title">
             FGA0095 – CODIFICAÇÃO E COMPRESSÃO DE SINAIS, IMAGENS E VÍDEO
         </p>
 
-        <!-- PROFESSOR com link atualizado -->
+        <!-- PROFESSOR -->
         <p style="margin-top:6px; text-align: center;">
             <span class="highlight">Prof. Marcus Chaffim</span><br />
             <span style="font-size:0.98rem;">Corpo docente:&nbsp;</span>
@@ -331,7 +323,7 @@
             </li>
         </ul>
 
-        <!-- DETALHES EM GRADE: DUAS COLUNAS ALINHADAS À ESQUERDA -->
+        <!-- DETALHES EM GRADE -->
         <div class="detail-grid">
 
             <div class="detail-row">
@@ -354,11 +346,12 @@
                 <span class="detail-value">8 horas (4h de atividades práticas + 4h de estudo)</span>
             </div>
 
-            <!-- Pré-requisitos ocupa a linha inteira, com dois itens internos -->
+            <!-- PRÉ-REQUISITOS: quebra de linha após o & -->
             <div class="detail-full">
                 <span class="detail-label">Pré‑requisitos</span>
                 <span class="detail-value">
                     <strong>FGA0102</strong> Sinais e Sistemas para Engenharia &amp;
+                    <br />
                     <strong>FGA0157</strong> Probabilidade e Estatística Aplicado à Engenharia
                 </span>
             </div>
