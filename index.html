@@ -95,14 +95,14 @@
 
         /* --- Título da disciplina: verde UnB, tamanho reduzido (1.3rem) --- */
         .course-title {
-            font-size: 1.3rem;          /* antes 1.5rem → redução de ~13% */
+            font-size: 1.3rem;
             font-weight: 600;
             color: #006633;
             text-align: center;
-            word-break: break-word;     /* permite quebra suave, mas evita isolamento */
+            word-break: break-word;
         }
 
-        /* --- LINKS --- */
+        /* --- LINKS padrão --- */
         a {
             color: #0066cc;
             text-decoration: underline;
@@ -163,7 +163,7 @@
             padding: 2px 0;
         }
 
-        /* Para o pré-requisito que ocupa duas colunas */
+        /* Pré-requisitos ocupa a linha inteira */
         .detail-full {
             grid-column: 1 / -1;
             display: flex;
@@ -175,11 +175,6 @@
         }
         .detail-full .detail-label {
             min-width: 110px;
-        }
-        /* Quebra de linha após o & na linha de pré-requisitos */
-        .prereq-break {
-            display: block;
-            margin-top: 2px;
         }
 
         /* --- Badge --- */
@@ -194,7 +189,7 @@
             letter-spacing: 0.01em;
         }
 
-        /* --- Rodapé --- */
+        /* --- Rodapé com links --- */
         .footer {
             margin-top: 28px;
             font-size: 0.85rem;
@@ -208,9 +203,17 @@
 
         .footer a {
             color: #0066cc;
+            text-decoration: underline;
         }
+
         .footer a:hover {
             color: #003366;
+        }
+
+        /* Separador "|" não clicável, mantido como texto */
+        .footer .sep {
+            color: #6a7a8a;
+            margin: 0 4px;
         }
 
         /* --- Responsivo --- */
@@ -238,11 +241,14 @@
                 padding: 12px 14px;
             }
             .course-title {
-                font-size: 1.15rem; /* ainda menor em telas pequenas */
+                font-size: 1.15rem;
             }
             .logo-container img {
                 width: 80px;
                 height: 80px;
+            }
+            .footer {
+                font-size: 0.75rem;
             }
         }
 
@@ -266,6 +272,9 @@
             .logo-container img {
                 width: 60px;
                 height: 60px;
+            }
+            .footer {
+                font-size: 0.7rem;
             }
         }
     </style>
@@ -303,7 +312,7 @@
         <!-- PROFESSOR -->
         <p style="margin-top:6px; text-align: center;">
             <span class="highlight">Prof. Marcus Chaffim</span><br />
-            <span style="font-size:0.98rem;">Corpo docente:&nbsp;</span>
+            <span style="font-size:0.8rem;">Corpo docente:&nbsp;</span>
             <a href="https://eletronica.unb.br/corpo-docente/" target="_blank" rel="noopener">
                 https://eletronica.unb.br/corpo-docente/
             </a>
@@ -311,7 +320,7 @@
 
         <!-- PLANO DE ENSINO -->
         <h2>📘 Plano de Ensino 2025-02</h2>
-        <p style="font-size:1rem; color:#3a4a5a; margin-top:-4px; text-align: center;">
+        <p style="font-size:0.9rem; color:#3a4a5a; margin-top:-4px; text-align: center;">
             Curso ministrado em modalidade presencial
         </p>
 
@@ -346,7 +355,7 @@
                 <span class="detail-value">8 horas (4h de atividades práticas + 4h de estudo)</span>
             </div>
 
-            <!-- PRÉ-REQUISITOS: quebra de linha após o & -->
+            <!-- PRÉ-REQUISITOS -->
             <div class="detail-full">
                 <span class="detail-label">Pré‑requisitos</span>
                 <span class="detail-value">
@@ -358,9 +367,15 @@
 
         </div>
 
-        <!-- RODAPÉ -->
+        <!-- RODAPÉ COM LINKS -->
         <div class="footer">
-            CSIV | Engenharia Eletrônica | Faculdade de Ciências e Tecnologias em Engenharia | Universidade de Brasília
+            <a href="https://github.com/chaffim/CSIV" target="_blank" rel="noopener">CSIV</a>
+            <span class="sep">|</span>
+            <a href="https://eletronica.unb.br/" target="_blank" rel="noopener">Engenharia Eletrônica</a>
+            <span class="sep">|</span>
+            <a href="https://fcte.unb.br/" target="_blank" rel="noopener">Faculdade de Ciências e Tecnologias em Engenharia</a>
+            <span class="sep">|</span>
+            <a href="https://www.unb.br/" target="_blank" rel="noopener">Universidade de Brasília</a>
         </div>
 
     </div>
