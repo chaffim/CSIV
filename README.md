@@ -20,10 +20,10 @@ FGA0157 Probabilidade e Estatística Aplicado à Engenharia.
 ---
 
 
-> **Prof. Marcus Chaffim** - UnB | FCTE | Engenharia Eletrônica | [SIGAA](https://sigaa.unb.br/sigaa/public/docente/portal.jsf?siape=1901903)  \
+> **Prof. Marcus Chaffim** - UnB | FCTE | Engenharia Eletrônica | [SIGAA](https://sigaa.unb.br/sigaa/public/docente/portal.jsf?siape=1901903)  
 
->> LinkedIn -- [Marcus Chaffim](https://www.linkedin.com/in/chaffim/?locale=en-US) \  
->> Google Acadêmico -- [Prof. Marcus Chaffim](https://scholar.google.com.br/citations?user=Dp-Z0gcAAAAJ&hl=pt-BR) \  
+>> LinkedIn -- [Marcus Chaffim](https://www.linkedin.com/in/chaffim/?locale=en-US)   
+>> Google Acadêmico -- [Prof. Marcus Chaffim](https://scholar.google.com.br/citations?user=Dp-Z0gcAAAAJ&hl=pt-BR)   
 >> ORCID -- https://orcid.org/0000-0001-5876-9910
 
 
