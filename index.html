@@ -25,7 +25,7 @@
         }
 
         .container {
-            max-width: 820px;
+            max-width: 900px;
             width: 100%;
             background: #ffffff;
             padding: 40px 44px;
@@ -76,6 +76,14 @@
             margin-bottom: 8px;
             color: #1e1e1e;
             text-align: center;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 6px;
+            color: #003366;
         }
 
         p {
@@ -177,6 +185,41 @@
             min-width: 110px;
         }
 
+        /* --- Listas de ementa, programa e bibliografia --- */
+        .content-list {
+            width: 100%;
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        .content-list li {
+            margin-bottom: 6px;
+            font-size: 1.02rem;
+            color: #1e1e1e;
+        }
+
+        .content-list li strong {
+            color: #003366;
+        }
+
+        .bib-item {
+            margin-bottom: 10px;
+            font-size: 0.98rem;
+            padding-left: 4px;
+        }
+
+        .bib-item strong {
+            color: #003366;
+        }
+
+        .bib-item a {
+            color: #0066cc;
+        }
+
+        .bib-item a:hover {
+            color: #003366;
+        }
+
         /* --- Badge --- */
         .badge {
             display: inline-block;
@@ -210,7 +253,6 @@
             color: #003366;
         }
 
-        /* Separador "|" não clicável, mantido como texto */
         .footer .sep {
             color: #6a7a8a;
             margin: 0 4px;
@@ -230,9 +272,14 @@
             h2 {
                 font-size: 1.15rem;
             }
+            h3 {
+                font-size: 1.05rem;
+            }
             p,
             .link-list li,
-            .detail-value {
+            .detail-value,
+            .content-list li,
+            .bib-item {
                 font-size: 0.98rem;
             }
             .detail-grid {
@@ -249,6 +296,9 @@
             }
             .footer {
                 font-size: 0.75rem;
+            }
+            .content-list {
+                padding-left: 16px;
             }
         }
 
@@ -276,6 +326,9 @@
             .footer {
                 font-size: 0.7rem;
             }
+            .content-list {
+                padding-left: 12px;
+            }
         }
     </style>
 </head>
@@ -300,11 +353,11 @@
 
         <!-- SUBTÍTULO INSTITUIÇÃO -->
         <p class="subhead">
-            <strong>Disciplina de Graduação em Engenharia Eletrônica</strong><br />
+            <strong>Disciplina Optativa de Graduação em Engenharia Eletrônica</strong><br />
             Universidade de Brasília – UnB
         </p>
 
-        <!-- CÓDIGO + NOME (verde UnB, tamanho reduzido) -->
+        <!-- CÓDIGO + NOME (verde UnB) -->
         <p class="course-title">
             FGA0095 – CODIFICAÇÃO E COMPRESSÃO DE SINAIS, IMAGENS E VÍDEO
         </p>
@@ -313,7 +366,7 @@
         <p style="margin-top:6px; text-align: center;">
             <span class="highlight">Prof. Marcus Chaffim</span><br />
             <span style="font-size:0.8rem;">Corpo docente:&nbsp;</span>
-            <a href="https://eletronica.unb.br/corpo-docente/" target="_blank" rel="noopener">
+            <a href="https://eletronica.unb.br/corpo-docente/" target="_blank" rel="noopener" style="font-size:0.8rem;">
                 https://eletronica.unb.br/corpo-docente/
             </a>
         </p>
@@ -367,7 +420,140 @@
 
         </div>
 
-        <!-- RODAPÉ COM LINKS -->
+        <!-- ========== EMENTA ========== -->
+        <h2 style="margin-top: 36px;">📚 Ementa</h2>
+        <ol class="content-list">
+            <li>Introdução a Codificação e Compressão;</li>
+            <li>Noções de Teoria da Informação;</li>
+            <li>Codificadores Entrópicos;</li>
+            <li>Compressão Sem Perdas e Compressão Com Perdas;</li>
+            <li>Quantização Escalar e Quantização Vetorial;</li>
+            <li>Codificação Diferencial;</li>
+            <li>Codificação baseada em Transformadas;</li>
+            <li>Codificação por Sub-bandas e Wavelets;</li>
+            <li>Compressão de Voz e Áudio;</li>
+            <li>Compressão de Vídeo e Codificadores Híbridos;</li>
+            <li>Introdução aos Codificadores Baseados em Aprendizado de Máquina e Redes Neurais.</li>
+        </ol>
+
+        <!-- ========== PROGRAMA ========== -->
+        <h2>📖 Programa</h2>
+        <ol class="content-list">
+            <li><strong>Modelos e codificação</strong>, Amostragem e quantização, Vídeo e sinais multidimensionais;</li>
+            <li><strong>Princípios de codificação</strong>, Entropia, Informação mútua, Codificação de fonte e de canal, Métricas objetivas de desempenho de codificadores, Compressão sem perdas e compressão com perdas, Critérios de distorção, Teoria taxa-distorção;</li>
+            <li><strong>Códigos (livres) de prefixo</strong>, Códigos de comprimento variável, Codificação de Huffman e correlatas, Codificação Aritmética;</li>
+            <li><strong>Métodos de dicionário</strong> estáticos e adaptativos, Compressão baseada em contextos, Compressão de imagens sem perdas;</li>
+            <li><strong>Quantização</strong> uniforme e não-uniforme, Quantização adaptativa, Quantização vetorial, Quantizadores vetoriais estruturados;</li>
+            <li><strong>Predição</strong>, DPCM e métodos correlatos; aplicações em compressão de imagem e de voz;</li>
+            <li><strong>Sistemas lineares</strong>, Transformadas ortogonais, Quantização e codificação de coeficientes da transformada, Aplicações em compressão de imagem, Luz e colorimetria, DCT e o padrão JPEG;</li>
+            <li><strong>Bancos de filtros</strong>, Multirresolução, DWT, EZW, SPIHT, JPEG 2000;</li>
+            <li><strong>Fundamentos da audição humana</strong>, MP3, AAC, Dolby AC-3;</li>
+            <li><strong>Compressão de Vídeo</strong>: modelos de cor, luminância e crominância, estimação/compensação de movimento, codificadores híbridos, MPEG-4, H.264/AVC, HEVC, AV1, VVC (H.266) e estado da arte;</li>
+            <li><strong>Noções de IA e Aprendizado de Máquina</strong>; redes neurais e aprendizado profundo aplicados à compressão.</li>
+        </ol>
+
+        <!-- ========== BIBLIOGRAFIA BÁSICA ========== -->
+        <h2>📖 Referências Bibliográficas</h2>
+        
+        <h3>📖 Bibliografia Básica</h3>
+
+        <h4>Livro‑texto principal</h4>
+        <div class="bib-item">
+            <strong>K. Sayood</strong>, <em>Introduction to Data Compression</em>, 5th ed. Morgan Kaufmann, 2017.<br />
+            ISBN: 9780128094747. <a href="https://www.elsevier.com/books/introduction-to-data-compression/sayood/978-0-12-809474-7" target="_blank" rel="noopener">Link</a>
+        </div>
+        <div class="bib-item">
+            <strong>K. Sayood</strong>, <em>Introduction to Data Compression</em>, 3rd ed. Morgan Kaufmann, 2006.<br />
+            ISBN: 9780080509259. <a href="https://ebookcentral.proquest.com/lib/univbrasilia-ebooks/detail.action?docID=333990" target="_blank" rel="noopener">Ebook Central (BCE‑UnB)</a>
+        </div>
+        <div class="bib-item">
+            <strong>K. Sayood</strong>, <em>Introduction to Data Compression</em>, 4th ed. Elsevier, 2012.<br />
+            ISBN: 9780124157965. <a href="http://booksite.elsevier.com/9780124157965/" target="_blank" rel="noopener">Site do livro</a>
+        </div>
+
+        <h4>Demais referências básicas</h4>
+        <div class="bib-item">
+            <strong>D. R. Bull e F. Zhang</strong>, <em>Intelligent Image and Video Compression: Communicating Pictures</em>, 2nd ed. Academic Press, 2021.<br />
+            ISBN: 9780128203538. <a href="https://fan-aaron-zhang.github.io/Intelligent-Image-and-Video-Compression.htm" target="_blank" rel="noopener">Site do livro</a>
+        </div>
+        <div class="bib-item">
+            <strong>F. Pereira</strong>, <em>Comunicações Audiovisuais: Tecnologias, Normas e Aplicações</em>. IST Press, 2009.<br />
+            ISBN: 9789728469818
+        </div>
+        <div class="bib-item">
+            <strong>W. A. Pearlman e A. Said</strong>, <em>Digital Signal Compression: Principles and Practice</em>. Cambridge University Press, 2011.<br />
+            ISBN: 9780521899826. <a href="https://www.cambridge.org/us/universitypress/subjects/engineering/communications-and-signal-processing/digital-signal-compression-principles-and-practice" target="_blank" rel="noopener">Cambridge</a>
+        </div>
+        <div class="bib-item">
+            <strong>C. M. Bishop</strong>, <em>Pattern Recognition and Machine Learning</em>. Springer, 2006 (Open Access).<br />
+            ISBN: 978-0387-31073-2. <a href="https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf" target="_blank" rel="noopener">PDF</a>
+        </div>
+        <div class="bib-item">
+            <strong>S. J. D. Prince</strong>, <em>Understanding Deep Learning</em>. The MIT Press, 2023 (Open Access).<br />
+            <a href="http://udlbook.com" target="_blank" rel="noopener">Site</a>
+        </div>
+        <div class="bib-item">
+            <strong>Y. Yang, S. Mandt e L. Theis</strong>, "An Introduction to Neural Data Compression", <em>Foundations and Trends in Computer Graphics and Vision</em>, v. 15, n. 2, pp. 113-200, 2023 (Open Access).<br />
+            arXiv:2202.06533. DOI: 10.1561/0600000107. <a href="https://arxiv.org/abs/2202.06533" target="_blank" rel="noopener">arXiv</a>
+        </div>
+
+        <!-- ========== BIBLIOGRAFIA COMPLEMENTAR ========== -->
+        <h3>📚 Bibliografia Complementar</h3>
+
+        <div class="bib-item">
+            <strong>R. Bamler</strong>, "Understanding Entropy Coding With Asymmetric Numeral Systems (ANS): a Statistician's Perspective", arXiv:2201.01741, 2022 (Open Access).<br />
+            <a href="https://arxiv.org/abs/2201.01741" target="_blank" rel="noopener">arXiv</a>
+        </div>
+        <div class="bib-item">
+            <strong>D. Salomon e G. Motta</strong>, <em>Handbook of Data Compression</em>, 5th ed. Springer, 2010.<br />
+            ISBN: 9781848829022
+        </div>
+        <div class="bib-item">
+            <strong>I. M. Pu</strong>, <em>Fundamental Data Compression</em>. Elsevier Science &amp; Technology, 2005.<br />
+            ISBN: 9780080530260. <a href="https://ebookcentral.proquest.com/lib/univbrasilia-ebooks/detail.action?docID=313638" target="_blank" rel="noopener">Ebook Central</a>
+        </div>
+        <div class="bib-item">
+            <strong>A. Gersho e R. M. Gray</strong>, <em>Vector Quantization and Signal Compression</em>. Kluwer Academic Publishers, 1992.<br />
+            ISBN: 9780792391814
+        </div>
+        <div class="bib-item">
+            <strong>N. S. Jayant e P. Noll</strong>, <em>Digital Coding of Waveforms: Principles and Applications to Speech and Video</em>. Prentice Hall, 1984.<br />
+            ISBN: 9780132119139
+        </div>
+        <div class="bib-item">
+            <strong>T. M. Cover e J. A. Thomas</strong>, <em>Elements of Information Theory</em>, 2nd ed. Wiley, 2006.<br />
+            ISBN: 9780471241959
+        </div>
+        <div class="bib-item">
+            <strong>A. C. Bovik</strong> (ed.), <em>Handbook of Image and Video Processing</em>. Elsevier Science &amp; Technology, 2005.<br />
+            <a href="https://ebookcentral.proquest.com/lib/univbrasilia-ebooks/detail.action?docID=328547" target="_blank" rel="noopener">Ebook Central</a>
+        </div>
+        <div class="bib-item">
+            <strong>L. Guan, Y. He e S.-Y. Kung</strong> (eds.), <em>Multimedia Image and Video Processing</em>. Taylor &amp; Francis Group, 2012.<br />
+            <a href="https://ebookcentral.proquest.com/lib/univbrasilia-ebooks/detail.action?docID=877130" target="_blank" rel="noopener">Ebook Central</a>
+        </div>
+        <div class="bib-item">
+            <strong>M. C. Angelides e H. Agius</strong> (eds.), <em>The Handbook of MPEG Applications: Standards in Practice</em>. John Wiley &amp; Sons, 2010.<br />
+            <a href="https://ebookcentral.proquest.com/lib/univbrasilia-ebooks/detail.action?docID=624692" target="_blank" rel="noopener">Ebook Central</a>
+        </div>
+        <div class="bib-item">
+            <strong>J. Van der Meer, S. Van der Meij e L. C. M. Itard</strong>, <em>Fundamentals and Evolution of MPEG‑2 Systems: Paving the MPEG Road</em>. John Wiley &amp; Sons, 2014.<br />
+            <a href="https://ebookcentral.proquest.com/lib/univbrasilia-ebooks/detail.action?docID=1658822" target="_blank" rel="noopener">Ebook Central</a>
+        </div>
+        <div class="bib-item">
+            <strong>R. C. Gonzalez e R. E. Woods</strong>, <em>Processamento Digital de Imagens</em>, 3rd ed. Pearson, 2010.<br />
+            ISBN: 9788576054016. <a href="https://plataforma.bvirtual.com.br/Acervo/Publicacao/2608" target="_blank" rel="noopener">MinhaBCE Digital</a>
+        </div>
+        <div class="bib-item">
+            <strong>A. V. Oppenheim e R. W. Schafer</strong>, <em>Processamento em Tempo Discreto de Sinais</em>. Pearson Brasil, 2013.<br />
+            ISBN: 9788581431024. <a href="https://plataforma.bvirtual.com.br/Leitor/Publicacao/3625/pdf/" target="_blank" rel="noopener">MinhaBCE Digital</a>
+        </div>
+        <div class="bib-item">
+            <strong>P. S. R. Diniz, E. A. B. Silva e S. L. Netto</strong>, <em>Processamento Digital de Sinais: Projeto e Análise de Sistemas</em>, 2nd ed. Bookman, 2014.<br />
+            ISBN: 9788582601242. <a href="https://integrada.minhabiblioteca.com.br/#/books/9788582601242/" target="_blank" rel="noopener">MinhaBCE Digital</a>
+        </div>
+
+        <!-- ========== RODAPÉ ========== -->
         <div class="footer">
             <a href="https://github.com/chaffim/CSIV" target="_blank" rel="noopener">CSIV</a>
             <span class="sep">|</span>
