@@ -8,7 +8,7 @@
 ---
 
 
-> **Prof. Marcus Chaffim** - UnB | FCTE | Engenharia Eletrônica | [Professorres(as)](https://eletronica.unb.br/corpo-docente/)  
+> **Prof. Marcus Chaffim** - UnB | FCTE | Engenharia Eletrônica | [Docentes](https://eletronica.unb.br/corpo-docente/)  
 
 >> LinkedIn -- [Marcus Chaffim](https://www.linkedin.com/in/chaffim/?locale=en-US)   
 >> Google Acadêmico -- [Prof. Marcus Chaffim](https://scholar.google.com.br/citations?user=Dp-Z0gcAAAAJ&hl=pt-BR)   
